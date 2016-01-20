@@ -6,31 +6,11 @@
 /*   By: avella <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/19 19:32:32 by avella            #+#    #+#             */
-/*   Updated: 2016/01/18 18:52:31 by avella           ###   ########.fr       */
+/*   Updated: 2016/01/20 16:06:06 by avella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-
-char		*dp(const char *s1)
-{
-	int		index;
-	char	*dupli;
-
-	index = 0;
-	dupli = (char *)malloc(sizeof(char) * ft_strlen(s1) + 1);
-	if (dupli == NULL)
-	{
-		return (NULL);
-	}
-	while (s1[index] != '\0')
-	{
-		dupli[index] = s1[index];
-		index++;
-	}
-	dupli[index] = '\0';
-	return (dupli);
-}
 
 size_t		ft_strlen(const char *str)
 {
@@ -58,34 +38,34 @@ void		ft_putstr(char const *str)
 		index++;
 	}
 }
-int          ft_strlen2(const char *str)
-{
-  int index;
 
-  index = 0;
-  while (str[index] != '\0')
-    index++;
-  return (index);
+int			ft_strlen2(const char *str)
+{
+	int index;
+
+	index = 0;
+	while (str[index] != '\0')
+		index++;
+	return (index);
 }
 
 int			all_try(char *chaine)
 {
-  if(good_end(chaine))
-    {
-      if (try_1(chaine))
+	if (good_end(chaine))
 	{
-	  if (try_2(chaine, 0, 0, 0))
-	    {
-	      if (try_3(chaine, 0, 0, 0))
+		if (try_1(chaine))
 		{
-		  
-		  if (try_4(chaine))
-		    {
-		      return (1);
-		    }
+			if (try_2(chaine, 0, 0, 0))
+			{
+				if (try_3(chaine, 0, 0, 0))
+				{
+					if (try_4(chaine))
+					{
+						return (1);
+					}
+				}
+			}
 		}
-	    }
 	}
-    }
-  return (0);
+	return (0);
 }

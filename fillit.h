@@ -6,7 +6,7 @@
 /*   By: avella <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/18 19:02:55 by avella            #+#    #+#             */
-/*   Updated: 2016/01/18 19:15:32 by avella           ###   ########.fr       */
+/*   Updated: 2016/01/20 15:49:00 by avella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ typedef struct		s_var
 	int		length;
 	char	*chaine;
 	char	*piece;
-  
 }					t_var;
 
 typedef struct		s_var2
@@ -35,13 +34,11 @@ typedef struct		s_var2
 	int		nbt;
 	char	*chaine;
 	int		length;
-
 }					t_var2;
 
-
-t_var *assign(t_var *v, int length, char *chaine, char *piece);
-int returned_try(int count);
-int          ft_strlen2(const char *str);
+t_var				*assign(t_var *v, int length, char *chaine, char *piece);
+int					returned_try(int count);
+int					ft_strlen2(const char *str);
 int					good_end(char *chaine);
 int					try_1(char *chaine);
 int					try_2(char *chaine, int count, int time, int i);
@@ -58,10 +55,10 @@ size_t				ft_strlen(const char *str);
 void				ft_putchar(char c);
 void				ft_putstr(char const *str);
 char				*ft_strdup(const char *s1);
-int					go_right(int chainei, int piecei, t_var *var);
-int					go_down(int chainei, int piecei, t_var *var);
-int					go_up(int chainei, int piecei, t_var *var);
-int					go_left(int chainei, int piecei, t_var *var);
+int					go_right(int chainei, int piecei, t_var *v);
+int					go_down(int chainei, int piecei, t_var *v);
+int					go_up(int chainei, int piecei, t_var *v);
+int					go_left(int chainei, int piecei, t_var *v);
 int					backtrack(int *iactuel, char **tab, t_var2 *var2);
 int					ft_test_form(char *piece);
 void				ft_all(char *piece);

@@ -6,22 +6,22 @@
 /*   By: avella <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/18 18:19:08 by avella            #+#    #+#             */
-/*   Updated: 2016/01/18 18:20:35 by avella           ###   ########.fr       */
+/*   Updated: 2016/01/20 15:29:44 by avella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int	good_end(char *chaine)
+int		good_end(char *chaine)
 {
-  int i;
+	int i;
 
-  i = 0;
-  while (chaine[i] != '\0')
-    i++;
-  if (chaine[i - 1] == '\n')
-    return (1);
-  return (0);
+	i = 0;
+	while (chaine[i] != '\0')
+		i++;
+	if (chaine[i - 1] == '\n')
+		return (1);
+	return (0);
 }
 
 char	*trans_di(char *chaine, char c)

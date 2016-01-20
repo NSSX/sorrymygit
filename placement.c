@@ -6,7 +6,7 @@
 /*   By: avella <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/18 16:12:06 by avella            #+#    #+#             */
-/*   Updated: 2016/01/18 17:09:33 by avella           ###   ########.fr       */
+/*   Updated: 2016/01/20 15:30:18 by avella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 int		nb_tetri(char *chaine)
 {
-  
-    int count;
+	int count;
 	int time;
 	int i;
 
@@ -44,7 +43,6 @@ int		nb_tetri(char *chaine)
 
 char	*mychar(int *iactuel, int chainei, char **tab, t_var2 *var2)
 {
-  
 	int i;
 	int v;
 
@@ -73,8 +71,7 @@ char	*mychar(int *iactuel, int chainei, char **tab, t_var2 *var2)
 
 int		backtrack(int *iactuel, char **tab, t_var2 *var2)
 {
-  
-  int		i;
+	int		i;
 	int		ret;
 	char	*chaine;
 	char	carac;
@@ -85,12 +82,10 @@ int		backtrack(int *iactuel, char **tab, t_var2 *var2)
 	tetri = var2->tetri;
 	ret = 3;
 	i = 0;
-
 	while (!try(dp(tab[tetri]), dp(chaine), iactuel[tetri], var2->length)
 			&& chaine[iactuel[tetri]] != '\0')
 		iactuel[tetri]++;
-
- if (try(dp(tab[tetri]), dp(chaine), iactuel[tetri], var2->length))
+	if (try(dp(tab[tetri]), dp(chaine), iactuel[tetri], var2->length))
 	{
 		try(dp(tab[tetri]), chaine, iactuel[tetri], var2->length);
 		ret = 1;
@@ -105,8 +100,7 @@ int		backtrack(int *iactuel, char **tab, t_var2 *var2)
 
 void	ft_all(char *piece)
 {
-  
-  char	**tab;
+	char	**tab;
 	int		*iactuel;
 	t_var2	*var2;
 

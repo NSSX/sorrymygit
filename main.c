@@ -6,7 +6,7 @@
 /*   By: zkerkeb <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/07 15:05:16 by zkerkeb           #+#    #+#             */
-/*   Updated: 2015/12/20 15:41:36 by avella           ###   ########.fr       */
+/*   Updated: 2016/01/20 15:26:34 by avella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ char	*ft_write(int fd, char *buf, char *str)
 
 	i = 0;
 	while ((ret = read(fd, buf, BUF_SIZE)) != 0)
-	  {
-	    buf[ret] = '\0';
-	    str[i] = buf[0];
-	    i++;
+	{
+		buf[ret] = '\0';
+		str[i] = buf[0];
+		i++;
 	}
 	str[i] = '\0';
 	return (str);
